@@ -1,0 +1,11 @@
+[Unit]
+Description=Auto-start iSCSI targets from ZFS volumes
+After=zfs.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/recreate_targets.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

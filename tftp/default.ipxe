@@ -1,0 +1,11 @@
+#!ipxe
+dhcp
+echo Booting via iPXE...
+# build client label from MAC
+set mac ${net0/mac}
+set mac_trim ${mac:hexstring}
+set client_label pc-${mac_trim}
+set server 192.168.10.10
+set iqn iqn.2025-09.local.lab:${client_label}
+echo SANBOOT iscsi:${server}:::3260:${iqn}
+sanboot iscsi:${server}:::3260:${iqn}

@@ -1,0 +1,1 @@
+Place a signed iPXE EFI binary here as ipxe.efi for UEFI Secure Boot.

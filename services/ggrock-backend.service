@@ -1,0 +1,16 @@
+[Unit]
+Description=ggRock Replica Backend (Node)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/ggrock-replica/backend
+ExecStart=/usr/bin/node server.js
+Restart=on-failure
+User=ggrock
+Group=ggrock
+Environment=NODE_ENV=production
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
